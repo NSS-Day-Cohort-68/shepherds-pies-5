@@ -4,6 +4,7 @@ import { Login } from "./components/auth/Login"
 import { Authorized } from "./views/Authorized"
 import { ApplicationViews } from "./views/ApplicationViews"
 
+
 function App() {
     return (
         <Routes>
