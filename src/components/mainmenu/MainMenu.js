@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom"
 
 
 
-export const MainMenu = ({ currentuser }) => {
+export const MainMenu = ({ currentUser }) => {
      const navigate = useNavigate()
 
     return (
@@ -13,12 +13,15 @@ export const MainMenu = ({ currentuser }) => {
             <button classname="btn-primary">
                 <Link to="vieworders">View Orders</Link>
             </button>
-            <button classname="btn-primary">
-                {currentuser.admin === true ? <Link to="viewemployees">View Employees</Link> : ""}   
-            </button>
-            <button classname="btn-primary">
-                {currentuser.admin === true ? <Link to="salesreport">Sales Report</Link> : ""}
-            </button>
+            
+            {currentUser.admin === true ? 
+                <button classname="btn-primary"><Link to="viewemployees">View Employees</Link></button>
+                 : ""}   
+         
+            {currentUser.admin === true ? 
+                <button classname="btn-primary"><Link to="salesreport">Sales Report</Link></button> 
+                : ""}
+          
             {localStorage.getItem("nonna_user") ? (
                 <button classname="btn-primary">
                     <Link

@@ -11,6 +11,7 @@ useEffect(() => {
     const NonnaUserObject = JSON.parse(localNonnaUser)
     setCurrentUser(NonnaUserObject)
 }, [])
+
     return (
         <Routes>
             <Route path="/">
