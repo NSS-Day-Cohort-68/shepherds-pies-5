@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { MainMenu } from "../components/mainmenu/MainMenu"
 import { useState, useEffect } from "react"
+import { NewOrder } from "../components/neworder/NewOrder"
 
 
 export const ApplicationViews = () => {
@@ -16,6 +17,7 @@ useEffect(() => {
         <Routes>
             <Route path="/">
                 <Route index element={<MainMenu currentUser={currentUser}/>} />
+                <Route path="neworder" element={<NewOrder currentUser={currentUser}/>} /> 
                 {/* INSERT ADDITIONAL ROUTES HERE */}
             </Route>
         </Routes>

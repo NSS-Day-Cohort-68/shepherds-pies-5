@@ -17,7 +17,7 @@
             "price": 15
         }
     ],
-    "cheese": 
+    "cheeses": 
     [
         {
             "id": 1,
@@ -96,7 +96,7 @@
             "sizeId": 2,
             "cheeseId": 1,
             "sauceId": 1,
-            "toppingIds": [1, 3]
+            "toppingId": [1, 3]
         },
         {
             "id": 2,
@@ -381,6 +381,14 @@
             "address": "777 Birch Ln, Villagetown, USA",
             "phoneNumber": "555-8901",
             "email": "ava.taylor@example.com",
+            "admin": true
+        },
+        {
+            "id": 11,
+            "name": "Giuseppe Shepherd",
+            "address": "789 Peach Rd, Fruitburg, USA",
+            "phoneNumber": "555-5735",
+            "email": "guiseppe.shepherd@example.com",
             "admin": true
         }
     ]
