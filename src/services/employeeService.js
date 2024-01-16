@@ -7,3 +7,32 @@ export const createEmployee = async (newEmployeeObj) => {
 
     return await fetch("http://localhost:8088/employees", postOptions)
 }
+
+export const getEmployeeById = async (employeeId) => {
+    const response = await fetch(
+        `http://localhost:8088/employees/${employeeId}`
+    )
+    return await response.json()
+}
+
+export const updateEmployee = async (updatedEmployeeObj) => {
+    const putOptions = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedEmployeeObj),
+    }
+
+    return await fetch(
+        `http://localhost:8088/employees/${updatedEmployeeObj.id}`,
+        putOptions
+    )
+}
+
+export const deleteEmployee = async (employeeId) => {
+    const deleteOptions = { method: "DELETE" }
+
+    return await fetch(
+        `http://localhost:8088/employees/${employeeId}`,
+        deleteOptions
+    )
+}
