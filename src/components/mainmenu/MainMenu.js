@@ -11,7 +11,7 @@ export const MainMenu = ({ currentUser }) => {
                 <Link to="neworder">New Order</Link> 
             </button> 
             <button classname="btn-primary">
-                <Link to="vieworders">View Orders</Link>
+                <Link to="orders">View Orders</Link>
             </button>
             
             {currentUser.admin === true ? 

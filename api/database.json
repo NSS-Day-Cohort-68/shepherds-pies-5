@@ -311,7 +311,8 @@
       ],
       "table": 4,
       "employeeId": 7,
-      "deliverer": ""
+      "delivererId": null,
+      "completed": false
     },
     {
       "id": 2,
@@ -324,8 +325,9 @@
       ],
       "table": "",
       "employeeId": 5,
-      "deliverer": 7,
-      "address": "456 Cherry Ave, Berrytown, USA"
+      "delivererId": 7,
+      "address": "456 Cherry Ave, Berrytown, USA",
+      "completed": false
     },
     {
       "id": 3,
@@ -339,7 +341,8 @@
       ],
       "table": 2,
       "employeeId": 6,
-      "deliverer": ""
+      "delivererId": null,
+      "completed": false
     },
     {
       "id": 4,
@@ -354,7 +357,8 @@
       ],
       "table": 3,
       "employeeId": 3,
-      "deliverer": ""
+      "delivererId": null,
+      "completed": false
     },
     {
       "id": 5,
@@ -368,8 +372,9 @@
       ],
       "table": "",
       "employeeId": 4,
-      "deliverer": 5,
-      "address": "101 Lemon Blvd, Citrusville, USA"
+      "delivererId": 5,
+      "address": "101 Lemon Blvd, Citrusville, USA",
+      "completed": false
     },
     {
       "id": 6,
@@ -380,7 +385,8 @@
       ],
       "table": 5,
       "employeeId": 1,
-      "deliverer": ""
+      "delivererId": 4,
+      "completed": false
     },
     {
       "id": 7,
@@ -391,8 +397,17 @@
       ],
       "table": "",
       "employeeId": 2,
-      "deliverer": 3,
-      "address": "444 Pineapple Rd, Palmtown, USA"
+      "delivererId": 2,
+      "address": "444 Pineapple Rd, Palmtown, USA",
+      "completed": false,
+      "employee": {
+        "id": 2,
+        "name": "Jane Smith",
+        "address": "456 Oak Ave, Townsville, USA",
+        "phoneNumber": "555-5678",
+        "email": "jane.smith@example.com",
+        "admin": false
+      }
     }
   ],
   "employees": [
