@@ -16,19 +16,21 @@ export const NewOrder = () => {
     const [pizzaObject, setPizzaObject] = useState({})
 
     useEffect(() => {
-        
-    }, [])
-
-    const handlePizza = (size, cheese, sauce, allchecked) => {
+       
         let pizza = { 
-                     "sizeId": size,
-                     "cheeseId": cheese,
-                     "sauceId": sauce,
-                     "toppingsArray": allchecked
+            "sizeId": size,
+            "cheeseId": cheese,
+            "sauceId": sauce,
+            "toppingsArray": allchecked
 
         }
         setPizzaObject(pizza)
+    }, [size, cheese, sauce, allchecked])
+
+    const handlePizza = (pizzaObject) => {
+        
     }
+
 
     const handleSizeOption = (event) => {
         setSize(parseInt(event.target.value))
@@ -141,7 +143,7 @@ export const NewOrder = () => {
                     }
                 )}
             </form>
-            <button onClick={handlePizza}>ADD PIZZA</button>
+            <button >ADD PIZZA</button>
            </section>
            <section className="order">
              <h1>Order</h1>
