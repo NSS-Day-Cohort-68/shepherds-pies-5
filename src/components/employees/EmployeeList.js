@@ -15,13 +15,15 @@ export const EmployeeList = () => {
     return (<section>
        <div className="employees">
         {allEmployees.map(employee=>{
-            return <div className="employeeCard">
+            return (<Link to={`/update-employee/${employee.id}`}>
+                <div className="employeeCard">
                 <p className="employeeName">{employee.name}</p>
                 <p>{employee.address}</p>
                 <p>{employee.phoneNumber}</p>
                 <p>{employee.email}</p>
                 
             </div>
+            </Link>)
         })}
        </div>
        
