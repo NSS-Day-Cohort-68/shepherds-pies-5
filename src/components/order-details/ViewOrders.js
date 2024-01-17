@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import "./OrderDetails.css";
+import "./ViewOrders.css";
 import { getAllOrders, switchOrderStatus } from "../../services/orderService";
 import { getAllEmployees } from "../../services/employeeService";
+import { Link } from "react-router-dom"
 
 export const ViewOrders = () => {
   const [pizzaOrders, setPizzaOrders] = useState([]);
@@ -61,12 +62,11 @@ export const ViewOrders = () => {
                 <select
                   id={order.id}
                   onChange={(event) => {
-                    order.delivererId = parseInt(event.target.value) 
+                    order.delivererId = parseInt(event.target.value);
 
-                    switchOrderStatus(order).then(() => updateOrders())
+                    switchOrderStatus(order).then(() => updateOrders());
                   }}
                   value={order.delivererId}
-                  
                 >
                   <option value="0">Deliverer...</option>
                   {employees
@@ -140,6 +140,11 @@ export const ViewOrders = () => {
             })}
         </div>
       </div>
+      <button className="Home">
+        <Link to="/" className="nav-link">
+          <img src="https://i.pinimg.com/originals/b0/22/07/b0220700bcfee516dfd95bf09507cd80.png" />
+        </Link>
+      </button>
     </div>
   );
 };
