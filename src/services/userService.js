@@ -3,3 +3,9 @@ export const getUserByEmail = (email) => {
         (employeeObj) => employeeObj.json()
     )
 }
+
+export const getAllUsers = () => {
+    return fetch(`http://localhost:8088/employees`).then((res)=>
+    res.json()
+    )
+}

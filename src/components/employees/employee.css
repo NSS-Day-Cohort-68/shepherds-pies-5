@@ -1,0 +1,52 @@
+.employees {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    position: relative;
+}
+
+.employeeCard {
+    width: 275px;
+    margin: 5px;
+    border: 2px solid red;
+    padding: 6px;
+
+}
+
+.employeeName {
+    font-weight: 900;
+    text-decoration: underline;
+    text-align: center;
+    
+}
+
+.addEmployee {
+
+    padding: 2rem;
+    border: 1px solid transparent;
+    background-color: red;
+    cursor: pointer;
+    position: absolute;
+    top : 300px;
+    right: 50px
+}
+
+
+.Home {
+    background-position:center;
+    background-repeat:no-repeat;
+    /* padding: 2rem; */
+    border: 1px solid transparent;
+    background-color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    
+}
+
+img {
+    width: 75px;
+    /* padding: .5px; */
+
+}

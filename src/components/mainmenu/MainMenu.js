@@ -15,7 +15,7 @@ export const MainMenu = ({ currentUser }) => {
             </button>
             
             {currentUser.admin === true ? 
-                <button classname="btn-primary"><Link to="viewemployees">View Employees</Link></button>
+                <button classname="btn-primary"><Link to="/EmployeeList">View Employees</Link></button>
                  : ""}   
          
             {currentUser.admin === true ? 
