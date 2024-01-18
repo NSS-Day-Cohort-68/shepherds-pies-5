@@ -27,6 +27,7 @@ export const ApplicationViews = () => {
                     path="update-employee/:employeeId"
                     element={<UpdateEmployee />}
                 />
+                <Route path="neworder" element={<NewOrder currentUser={currentUser}/>} />
             </Route>
         </Routes>
     )
