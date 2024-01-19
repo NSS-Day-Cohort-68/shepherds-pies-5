@@ -24,7 +24,7 @@ export const AddEmployee = () => {
     event.preventDefault();
 
     createEmployee(employee).then(() => {
-      navigate("/viewemployees");
+      navigate("/employeelist");
     });
   };
 

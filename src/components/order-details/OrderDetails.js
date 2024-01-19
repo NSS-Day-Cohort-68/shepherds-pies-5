@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getOrderByOrderId } from "../../services/orderService";
 import {
@@ -170,6 +170,13 @@ export const OrderDetails = () => {
 
   return (
     <>
+      <div className="nav">
+        <button className="nav-btn">
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        </button>
+      </div>
       <div className="order-details">
         <h2 className="page-heading">Order #{currentOrder.id} Summary</h2>
         <section className="order-pizzas">

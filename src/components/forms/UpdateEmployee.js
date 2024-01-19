@@ -45,11 +45,11 @@ export const UpdateEmployee = () => {
 
     if (event.target.value === "remove") {
       deleteEmployee(employee.id).then(() => {
-        navigate("/viewemployees");
+        navigate("/employeelist");
       });
     } else if (event.target.value === "save") {
       updateEmployee(employee).then(() => {
-        navigate("/viewemployees");
+        navigate("/employeelist");
       });
     }
   };
