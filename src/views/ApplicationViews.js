@@ -9,6 +9,7 @@ import { EmployeeList } from "../components/employees/EmployeeList.js";
 import { UpdateEmployee } from "../components/forms/UpdateEmployee";
 import { SalesReport } from "../components/sales/SalesReport.js";
 import { NewOrder } from "../components/neworder/NewOrder.js";
+import { OrderDetails } from "../components/order-details/OrderDetails.js";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -24,6 +25,8 @@ export const ApplicationViews = () => {
       <Route path="/">
         <Route index element={<MainMenu currentUser={currentUser} />} />
         <Route path="orders" element={<ViewOrders />} />
+        <Route path="orders/:orderId" element={<OrderDetails />} />
+
         <Route path="sales" element={<SalesReport />} />
 
         <Route index element={<MainMenu currentUser={currentUser} />} />
