@@ -1,0 +1,21 @@
+.main-body {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 10px;
+padding: 10px;
+}
+
+.monthlySales {
+    border: 1px solid red;
+    width: 50%;
+    
+}
+
+
+
+.orders {
+    padding: 5px;
+    justify-content: space-evenly,
+
+}
