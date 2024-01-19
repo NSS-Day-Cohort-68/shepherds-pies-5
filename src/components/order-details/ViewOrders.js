@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./ViewOrders.css";
 import { getAllOrders, switchOrderStatus } from "../../services/orderService";
 import { getAllEmployees } from "../../services/employeeService";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const ViewOrders = () => {
   const [pizzaOrders, setPizzaOrders] = useState([]);
@@ -59,7 +59,10 @@ export const ViewOrders = () => {
           {activeOrders.map((order) => {
             return (
               <section className="orders" key={order.id}>
-                Pizza Order #{order.id} -- {order.date}
+                <Link to={`/orders/${order.id}`}>
+                  {" "}
+                  Pizza Order #{order.id} -- {order.date}
+                </Link>
                 <select
                   id={order.id}
                   onChange={(event) => {
