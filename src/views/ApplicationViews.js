@@ -1,11 +1,19 @@
 import { Routes, Route } from "react-router-dom"
 import { MainMenu } from "../components/mainmenu/MainMenu"
 import { useState, useEffect } from "react"
-import { NewOrder } from "../components/neworder/NewOrder"
+
+
+
 import { ViewOrders } from "../components/order-details/ViewOrders"
+
 import { AddEmployee } from "../components/forms/AddEmployee"
 import { EmployeeList } from "../components/employees/EmployeeList.js"
 import { UpdateEmployee } from "../components/forms/UpdateEmployee"
+import { SalesReport } from "../components/sales/SalesReport.js"
+import { AddEmployee } from "../components/forms/AddEmployee"
+
+
+
 
 export const ApplicationViews = () => {
     const [currentUser, setCurrentUser] = useState({})
@@ -19,7 +27,13 @@ export const ApplicationViews = () => {
     return (
         <Routes>
             <Route path="/">
+
+                <Route index element={<MainMenu currentUser={currentUser} />} />
+                <Route path="orders" element={<ViewOrders/>}/>
+                <Route path="sales" element={<SalesReport />} />
+
                 <Route index element={<MainMenu currentUser={currentUser}/>} />
+
                 {/* INSERT ADDITIONAL ROUTES HERE */}
                 <Route path="EmployeeList" element={<EmployeeList />} />
                 <Route path="add-employee" element={<AddEmployee />} />

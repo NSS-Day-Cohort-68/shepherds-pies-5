@@ -15,6 +15,12 @@ export const switchOrderStatus = async (order) => {
   return await fetch(`http://localhost:8088/orders/${order.id}` , putOptions)
 }
 
+
+export const getAllPizzas = () => {
+  return fetch(`http://localhost:8088/pizzas?_expand=size&_expand=cheese&_expand=sauce&_expand=order&_embed=pizzaToppings`).then((res)=>res.json())
+}
+
+
 export const createPizza = async (pizzaObject) => {
   let res = await fetch("http://localhost:8088/pizzas", {
     method: "POST",
@@ -85,3 +91,4 @@ export const postPizza = async (pizzaObject) => {
 	let pizza = res.json()
 	return pizza
 }
+
