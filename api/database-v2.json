@@ -1,0 +1,688 @@
+{
+  "sizes": [
+    {
+      "id": 1,
+      "size": "Small",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "size": "Medium",
+      "price": 12
+    },
+    {
+      "id": 3,
+      "size": "Large",
+      "price": 15
+    }
+  ],
+  "cheeses": [
+    {
+      "id": 1,
+      "cheese": "Buffalo Mozzarella"
+    },
+    {
+      "id": 2,
+      "cheese": "Four Cheese"
+    },
+    {
+      "id": 3,
+      "cheese": "Vegan"
+    },
+    {
+      "id": 4,
+      "cheese": "None"
+    }
+  ],
+  "sauces": [
+    {
+      "id": 1,
+      "sauce": "Marinara"
+    },
+    {
+      "id": 2,
+      "sauce": "Arrabbiata"
+    },
+    {
+      "id": 3,
+      "sauce": "Garlic White"
+    },
+    {
+      "id": 4,
+      "sauce": "None"
+    }
+  ],
+  "toppings": [
+    {
+      "id": 1,
+      "topping": "sausage"
+    },
+    {
+      "id": 2,
+      "topping": "pepperoni"
+    },
+    {
+      "id": 3,
+      "topping": "mushroom"
+    },
+    {
+      "id": 4,
+      "topping": "onion"
+    },
+    {
+      "id": 5,
+      "topping": "green pepper"
+    },
+    {
+      "id": 6,
+      "topping": "black olive"
+    },
+    {
+      "id": 7,
+      "topping": "basil"
+    },
+    {
+      "id": 8,
+      "topping": "extra cheese"
+    }
+  ],
+  "pizzas": [
+    {
+      "id": 1,
+      "sizeId": 2,
+      "cheeseId": 1,
+      "sauceId": 1,
+      "orderId": 4
+    },
+    {
+      "id": 2,
+      "sizeId": 3,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "orderId": 3
+    },
+    {
+      "id": 3,
+      "sizeId": 1,
+      "cheeseId": 3,
+      "sauceId": 3,
+      "orderId": 1
+    },
+    {
+      "id": 4,
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "orderId": 5
+    },
+    {
+      "id": 5,
+      "sizeId": 3,
+      "cheeseId": 1,
+      "sauceId": 1,
+      "orderId": 2
+    },
+    {
+      "id": 6,
+      "sizeId": 1,
+      "cheeseId": 3,
+      "sauceId": 3,
+      "orderId": 4
+    },
+    {
+      "id": 7,
+      "sizeId": 2,
+      "cheeseId": 4,
+      "sauceId": 4,
+      "orderId": 3
+    },
+    {
+      "id": 8,
+      "sizeId": 3,
+      "cheeseId": 1,
+      "sauceId": 2,
+      "orderId": 1
+    },
+    {
+      "id": 9,
+      "sizeId": 1,
+      "cheeseId": 2,
+      "sauceId": 3,
+      "orderId": 5
+    },
+    {
+      "id": 10,
+      "sizeId": 2,
+      "cheeseId": 3,
+      "sauceId": 1,
+      "orderId": 2
+    },
+    {
+      "id": 11,
+      "sizeId": 3,
+      "cheeseId": 4,
+      "sauceId": 2,
+      "orderId": 4
+    },
+    {
+      "id": 12,
+      "sizeId": 1,
+      "cheeseId": 1,
+      "sauceId": 3,
+      "orderId": 1
+    },
+    {
+      "id": 13,
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 1,
+      "orderId": 5
+    },
+    {
+      "id": 14,
+      "sizeId": 3,
+      "cheeseId": 3,
+      "sauceId": 2,
+      "orderId": 3
+    },
+    {
+      "id": 15,
+      "sizeId": 1,
+      "cheeseId": 4,
+      "sauceId": 3,
+      "orderId": 2
+    },
+    {
+      "id": 16,
+      "sizeId": 2,
+      "cheeseId": 1,
+      "sauceId": 2,
+      "orderId": 4
+    },
+    {
+      "id": 17,
+      "sizeId": 3,
+      "cheeseId": 2,
+      "sauceId": 1,
+      "orderId": 7
+    },
+    {
+      "id": 18,
+      "sizeId": 1,
+      "cheeseId": 3,
+      "sauceId": 3,
+      "orderId": 5
+    },
+    {
+      "id": 19,
+      "sizeId": 2,
+      "cheeseId": 4,
+      "sauceId": 2,
+      "orderId": 3
+    },
+    {
+      "id": 20,
+      "sizeId": 2,
+      "cheeseId": 1,
+      "sauceId": 1,
+      "orderId": 7
+    },
+    {
+      "id": 21,
+      "sizeId": 1,
+      "cheeseId": 3,
+      "sauceId": 2,
+      "orderId": 6
+    },
+    {
+      "id": 22,
+      "sizeId": 3,
+      "cheeseId": 4,
+      "sauceId": 4,
+      "orderId": 4
+    }
+  ],
+  "pizzaToppings": [
+    {
+      "id": 1,
+      "pizzaId": 1,
+      "toppingId": 1
+    },
+    {
+      "id": 2,
+      "pizzaId": 1,
+      "toppingId": 3
+    },
+    {
+      "id": 3,
+      "pizzaId": 2,
+      "toppingId": 2
+    },
+    {
+      "id": 4,
+      "pizzaId": 2,
+      "toppingId": 4
+    },
+    {
+      "id": 5,
+      "pizzaId": 2,
+      "toppingId": 5
+    },
+    {
+      "id": 6,
+      "pizzaId": 3,
+      "toppingId": 3
+    },
+    {
+      "id": 7,
+      "pizzaId": 3,
+      "toppingId": 6
+    },
+    {
+      "id": 8,
+      "pizzaId": 3,
+      "toppingId": 7
+    },
+    {
+      "id": 9,
+      "pizzaId": 4,
+      "toppingId": 2
+    },
+    {
+      "id": 10,
+      "pizzaId": 4,
+      "toppingId": 3
+    },
+    {
+      "id": 11,
+      "pizzaId": 4,
+      "toppingId": 4
+    },
+    {
+      "id": 12,
+      "pizzaId": 5,
+      "toppingId": 1
+    },
+    {
+      "id": 13,
+      "pizzaId": 5,
+      "toppingId": 5
+    },
+    {
+      "id": 14,
+      "pizzaId": 6,
+      "toppingId": 6
+    },
+    {
+      "id": 15,
+      "pizzaId": 6,
+      "toppingId": 7
+    },
+    {
+      "id": 16,
+      "pizzaId": 7,
+      "toppingId": 8
+    },
+    {
+      "id": 17,
+      "pizzaId": 8,
+      "toppingId": 2
+    },
+    {
+      "id": 18,
+      "pizzaId": 8,
+      "toppingId": 4
+    },
+    {
+      "id": 19,
+      "pizzaId": 8,
+      "toppingId": 5
+    },
+    {
+      "id": 20,
+      "pizzaId": 9,
+      "toppingId": 3
+    },
+    {
+      "id": 21,
+      "pizzaId": 9,
+      "toppingId": 7
+    },
+    {
+      "id": 22,
+      "pizzaId": 10,
+      "toppingId": 1
+    },
+    {
+      "id": 23,
+      "pizzaId": 10,
+      "toppingId": 6
+    },
+    {
+      "id": 24,
+      "pizzaId": 10,
+      "toppingId": 4
+    },
+    {
+      "id": 25,
+      "pizzaId": 11,
+      "toppingId": 2
+    },
+    {
+      "id": 26,
+      "pizzaId": 11,
+      "toppingId": 5
+    },
+    {
+      "id": 27,
+      "pizzaId": 11,
+      "toppingId": 7
+    },
+    {
+      "id": 28,
+      "pizzaId": 12,
+      "toppingId": 3
+    },
+    {
+      "id": 29,
+      "pizzaId": 12,
+      "toppingId": 6
+    },
+    {
+      "id": 30,
+      "pizzaId": 13,
+      "toppingId": 1
+    },
+    {
+      "id": 31,
+      "pizzaId": 13,
+      "toppingId": 4
+    },
+    {
+      "id": 32,
+      "pizzaId": 13,
+      "toppingId": 7
+    },
+    {
+      "id": 33,
+      "pizzaId": 14,
+      "toppingId": 2
+    },
+    {
+      "id": 34,
+      "pizzaId": 14,
+      "toppingId": 5
+    },
+    {
+      "id": 35,
+      "pizzaId": 14,
+      "toppingId": 6
+    },
+    {
+      "id": 36,
+      "pizzaId": 15,
+      "toppingId": 8
+    },
+    {
+      "id": 37,
+      "pizzaId": 15,
+      "toppingId": 7
+    },
+    {
+      "id": 38,
+      "pizzaId": 16,
+      "toppingId": 3
+    },
+    {
+      "id": 39,
+      "pizzaId": 16,
+      "toppingId": 4
+    },
+    {
+      "id": 40,
+      "pizzaId": 16,
+      "toppingId": 5
+    },
+    {
+      "id": 41,
+      "pizzaId": 17,
+      "toppingId": 2
+    },
+    {
+      "id": 42,
+      "pizzaId": 17,
+      "toppingId": 1
+    },
+    {
+      "id": 43,
+      "pizzaId": 17,
+      "toppingId": 6
+    },
+    {
+      "id": 44,
+      "pizzaId": 18,
+      "toppingId": 3
+    },
+    {
+      "id": 45,
+      "pizzaId": 18,
+      "toppingId": 4
+    },
+    {
+      "id": 46,
+      "pizzaId": 19,
+      "toppingId": 1
+    },
+    {
+      "id": 47,
+      "pizzaId": 19,
+      "toppingId": 5
+    },
+    {
+      "id": 48,
+      "pizzaId": 19,
+      "toppingId": 7
+    },
+    {
+      "id": 49,
+      "pizzaId": 20,
+      "toppingId": 2
+    },
+    {
+      "id": 50,
+      "pizzaId": 20,
+      "toppingId": 6
+    },
+    {
+      "id": 51,
+      "pizzaId": 20,
+      "toppingId": 8
+    },
+    {
+      "id": 52,
+      "pizzaId": 21,
+      "toppingId": 2
+    },
+    {
+      "id": 53,
+      "pizzaId": 21,
+      "toppingId": 7
+    },
+    {
+      "id": 54,
+      "pizzaId": 22,
+      "toppingId": 1
+    },
+    {
+      "id": 55,
+      "pizzaId": 22,
+      "toppingId": 3
+    },
+    {
+      "id": 56,
+      "pizzaId": 22,
+      "toppingId": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "date": "2024-01-11",
+      "time": "12:30 PM",
+      "table": 4,
+      "employeeId": 7,
+      "delivererId": 0,
+      "address": "",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "date": "2024-01-12",
+      "time": "6:45 PM",
+      "table": 0,
+      "employeeId": 5,
+      "delivererId": 7,
+      "address": "456 Cherry Ave, Berrytown, USA",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "date": "2024-01-13",
+      "time": "2:15 PM",
+      "table": 2,
+      "employeeId": 6,
+      "delivererId": 0,
+      "address": "",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "date": "2024-01-14",
+      "time": "8:00 AM",
+      "table": 3,
+      "employeeId": 3,
+      "delivererId": 0,
+      "address": "",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "date": "2024-01-15",
+      "time": "7:30 PM",
+      "table": 0,
+      "employeeId": 4,
+      "delivererId": 5,
+      "address": "101 Lemon Blvd, Citrusville, USA",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "date": "2024-02-01",
+      "time": "8:00 PM",
+      "table": 5,
+      "employeeId": 1,
+      "delivererId": 0,
+      "address": "",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "date": "2024-01-11",
+      "time": "10:45 AM",
+      "table": 0,
+      "employeeId": 2,
+      "delivererId": 2,
+      "address": "444 Pineapple Rd, Palmtown, USA",
+      "completed": false
+    }
+  ], "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "address": "123 Main St, Cityville, USA",
+      "phoneNumber": "555-1234",
+      "email": "john.doe@example.com",
+      "admin": false
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "address": "456 Oak Ave, Townsville, USA",
+      "phoneNumber": "555-5678",
+      "email": "jane.smith@example.com",
+      "admin": false
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "address": "789 Pine Rd, Villagetown, USA",
+      "phoneNumber": "555-9012",
+      "email": "michael.johnson@example.com",
+      "admin": false
+    },
+    {
+      "id": 4,
+      "name": "Emily Williams",
+      "address": "101 Cedar Blvd, Hamletville, USA",
+      "phoneNumber": "555-3456",
+      "email": "emily.williams@example.com",
+      "admin": false
+    },
+    {
+      "id": 5,
+      "name": "Daniel Davis",
+      "address": "222 Birch Ln, Boroughburg, USA",
+      "phoneNumber": "555-7890",
+      "email": "daniel.davis@example.com",
+      "admin": false
+    },
+    {
+      "id": 6,
+      "name": "Olivia Jones",
+      "address": "333 Maple Dr, Villageburg, USA",
+      "phoneNumber": "555-2345",
+      "email": "olivia.jones@example.com",
+      "admin": false
+    },
+    {
+      "id": 7,
+      "name": "William Brown",
+      "address": "444 Pine Rd, Hamlettown, USA",
+      "phoneNumber": "555-6789",
+      "email": "william.brown@example.com",
+      "admin": false
+    },
+    {
+      "id": 8,
+      "name": "Sophia Miller",
+      "address": "555 Oak Ave, Cityburg, USA",
+      "phoneNumber": "555-0123",
+      "email": "sophia.miller@example.com",
+      "admin": false
+    },
+    {
+      "id": 9,
+      "name": "Alexander Wilson",
+      "address": "666 Cedar Blvd, Townburg, USA",
+      "phoneNumber": "555-4567",
+      "email": "alexander.wilson@example.com",
+      "admin": false
+    },
+    {
+      "id": 10,
+      "name": "Ava Taylor",
+      "address": "777 Birch Ln, Villagetown, USA",
+      "phoneNumber": "555-8901",
+      "email": "ava.taylor@example.com",
+      "admin": true
+    },
+    {
+      "admin": false,
+      "name": "Susan Edwards",
+      "address": "1234 Center Rd, Sunnyvale, USA",
+      "email": "susan@nonnas.com",
+      "phoneNumber": "598-366-4946",
+      "id": 11
+    }
+  ]
+}

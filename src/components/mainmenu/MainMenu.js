@@ -19,7 +19,7 @@ export const MainMenu = ({ currentUser }) => {
                  : ""}   
          
             {currentUser.admin === true ? 
-                <button classname="btn-primary"><Link to="salesreport">Sales Report</Link></button> 
+                <button classname="btn-primary"><Link to="/sales">Sales Report</Link></button> 
                 : ""}
           
             {localStorage.getItem("nonna_user") ? (
