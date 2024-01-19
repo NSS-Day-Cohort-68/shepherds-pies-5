@@ -20,7 +20,7 @@ export const MainMenu = ({ currentUser }) => {
          
             {currentUser.admin === true ? 
 
-                <button classname="btn-primary"><Link to="/sales">Sales Report</Link></button> 
+                <button className="btn-primary"><Link to="/sales">Sales Report</Link></button> 
 
                 : ""}
           

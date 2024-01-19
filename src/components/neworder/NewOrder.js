@@ -29,10 +29,13 @@ export const NewOrder = ({currentUser}) => {
   
 
     const handleDeliveryOrder = (order) => {
-       let orderCopy = {...order}
+       
+       
+        let orderCopy = {...order}
         orderCopy.address = address
-        orderCopy.total = total
+        orderCopy.total = total  
         upDateOrder(orderCopy)
+            
         
     }
 
@@ -50,9 +53,9 @@ export const NewOrder = ({currentUser}) => {
         setOrderPizzas(oldArray => [...oldArray, pizzaObject])
         
 
-        setCheese(0)
-        setSauce(0)
-        setSize(0)
+        setCheese('')
+        setSauce('')
+        setSize('')
         handleToppings(allchecked) 
         setAllChecked([])
         handlePizzaTotal(pizzaObject)
@@ -71,8 +74,7 @@ export const NewOrder = ({currentUser}) => {
         for (let topping of allchecked) {
             pizzaTotal += .5 
         }
-    
-
+        
         setTotal(total + pizzaTotal)
     }
 
@@ -98,6 +100,14 @@ export const NewOrder = ({currentUser}) => {
                 "toppingId": topping
             }
             createTopping(pizzaTopping)
+        }
+    }
+
+    const handleDeliveryFee = () => {
+        if(delivery === false) {
+            setTotal(total +5)
+        } else {
+            setTotal(total -5)
         }
     }
 
@@ -179,7 +189,6 @@ export const NewOrder = ({currentUser}) => {
             "sauceId": sauce,
             "orderId": orderNumber
             
-
         }
         setPizzaObject(pizza)
     }, [size, cheese, sauce, orderNumber])
@@ -283,6 +292,7 @@ export const NewOrder = ({currentUser}) => {
                             type="checkbox"
                             label="Delivery"
                             onChange={() => setDelivery(!delivery)}
+                            onClick={() => handleDeliveryFee()}
                             />Delivery
                     </div>
                     {delivery ? 

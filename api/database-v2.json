@@ -541,6 +541,22 @@
       "pizzaId": 0,
       "toppingId": 2,
       "id": 57
+    },
+    {
+      "toppingId": 1,
+      "id": 58
+    },
+    {
+      "toppingId": 2,
+      "id": 59
+    },
+    {
+      "toppingId": 3,
+      "id": 60
+    },
+    {
+      "toppingId": 4,
+      "id": 61
     }
   ],
   "orders": [
@@ -622,14 +638,6 @@
       "address": "",
       "completed": false,
       "id": 8
-    },
-    {
-      "date": "2024-1-19",
-      "time": "11:53",
-      "employeeId": 10,
-      "delivererId": null,
-      "completed": false,
-      "id": 9
     }
   ],
   "employees": [
