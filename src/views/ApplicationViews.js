@@ -28,6 +28,7 @@ export const ApplicationViews = () => {
                     element={<UpdateEmployee />}
                 />
                 <Route path="neworder" element={<NewOrder currentUser={currentUser}/>} />
+                <Route path="orders" element={<ViewOrders currentUser={currentUser}/>} />
             </Route>
         </Routes>
     )
