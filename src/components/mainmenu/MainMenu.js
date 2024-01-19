@@ -7,23 +7,25 @@ export const MainMenu = ({ currentUser }) => {
 
     return (
         <div className="button-container">
-            <button classname="btn-primary">
+            <button className="btn-primary">
                 <Link to="neworder">New Order</Link> 
             </button> 
-            <button classname="btn-primary">
+            <button className="btn-primary">
                 <Link to="orders">View Orders</Link>
             </button>
             
             {currentUser.admin === true ? 
-                <button classname="btn-primary"><Link to="/EmployeeList">View Employees</Link></button>
+                <button className="btn-primary"><Link to="/EmployeeList">View Employees</Link></button>
                  : ""}   
          
             {currentUser.admin === true ? 
+
                 <button classname="btn-primary"><Link to="/sales">Sales Report</Link></button> 
+
                 : ""}
           
             {localStorage.getItem("nonna_user") ? (
-                <button classname="btn-primary">
+                <button className="btn-primary">
                     <Link
                     to=""
                     onClick={() => {
