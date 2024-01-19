@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { CheeseService, SauceService, SizeService, ToppingService } from "../../services/optionService"
-import { createOrder, createPizza } from "../../services/orderService"
+import { createOrder, createPizza, createTopping, deletePizza, deletePizzaTopping, getPizzaById, upDateOrder } from "../../services/orderService"
+import { Link } from "react-router-dom"
 
 
 export const NewOrder = ({currentUser}) => {
@@ -19,41 +20,60 @@ export const NewOrder = ({currentUser}) => {
     const [allSizes, setAllSizes] = useState([])
     const [allToppings, setAllToppings] = useState([])
 
+    const [toppingPizza, setToppingPizza]= useState(0)
     const [pizzaObject, setPizzaObject] = useState({})
     const [orderPizzas, setOrderPizzas] = useState([])
+    const [orderNumber, setOrderNumber] = useState(0)
+    const [order, setOrder] = useState({})
     
   
 
-    const submitOrder = () => {
-
-        const currentDate = new Date();
-
-        const year = currentDate.getFullYear();
-        const month = currentDate.getMonth() + 1; 
-        const day = currentDate.getDate();
-        const hours = currentDate.getHours();
-        const minutes = currentDate.getMinutes();
-
-        const order = {
-            
-                "date": `${year}-${month}-${day}`,
-                "time": `${hours}:${minutes}`,
-                "employeeId": currentUser.id,
-                "delivererId": null,
-                "completed": false
-        }
-        if (delivery === true) {
-            order.address = address 
-        } else {
-            order.table = table
-        }
-        createOrder(order)
+    const handleDeliveryOrder = (order) => {
+       let orderCopy = {...order}
+        orderCopy.address = address
+        orderCopy.total = total
+        upDateOrder(orderCopy)
+        
     }
 
+    const handleDineInOrder = (order) => {
+        let orderCopy = {...order}
+         orderCopy.table = table
+         orderCopy.total = total
+         upDateOrder(orderCopy)
+     }
+
     const handlePizza = (pizzaObject) => {
+
+        createPizza(pizzaObject).then((pizza) => setToppingPizza(pizzaObject.id))
+        setPizzaObject(pizzaObject)
         setOrderPizzas(oldArray => [...oldArray, pizzaObject])
-        console.log(pizzaObject)
-        createPizza(pizzaObject)
+        
+
+        setCheese(0)
+        setSauce(0)
+        setSize(0)
+        handleToppings(allchecked) 
+        setAllChecked([])
+        handlePizzaTotal(pizzaObject)
+    }
+    
+    const handlePizzaTotal = (pizzaObject) => {
+        let pizzaTotal = 0
+
+        if (pizzaObject.sizeId === 3) {
+            pizzaTotal += 15
+        } else if (pizzaObject.sizeId === 2) {
+            pizzaTotal += 12
+        } else {
+            pizzaTotal += 10
+        }
+        for (let topping of allchecked) {
+            pizzaTotal += .5 
+        }
+    
+
+        setTotal(total + pizzaTotal)
     }
 
     const handleChecked = (event) => {
@@ -70,6 +90,37 @@ export const NewOrder = ({currentUser}) => {
             })
         }   
     }
+
+    const handleToppings = (allchecked) => {
+        for (let topping of allchecked) {
+            let pizzaTopping = {
+                "pizzaId": toppingPizza,
+                "toppingId": topping
+            }
+            createTopping(pizzaTopping)
+        }
+    }
+
+    const handleDelete = (pizzaObj) => {
+        // delete all associated toppings from pizzaToppings
+        if(pizzaObj.id) {
+        let pizzatoDelete = getPizzaById(pizzaObj.id)
+        
+
+        const pizzaToppingIds = [];
+        if (pizzatoDelete.pizzaToppings?.length) {
+          for (const pizzaTopping of pizzaObj.pizzaToppings) {
+            pizzaToppingIds.push(pizzaTopping.id);
+          }
+          for (const pizzaToppingId of pizzaToppingIds) {
+            deletePizzaTopping(pizzaToppingId);
+          }
+        }
+        // delete pizza
+        deletePizza(pizzatoDelete).then(() => {
+          orderPizzas.filter((pizza) => pizza.id !== pizzatoDelete.id)})
+        }
+      };
 
     const handleSizeOption = (event) => {
         setSize(parseInt(event.target.value))
@@ -90,32 +141,48 @@ export const NewOrder = ({currentUser}) => {
     const handleTable = (event) => {
         setTable(event.target.value)
     }
+
+    useEffect(()  => {
+
+        const currentDate = new Date();
+
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1; 
+        const day = currentDate.getDate();
+        const hours = currentDate.getHours();
+        const minutes = currentDate.getMinutes();
+
+        const order = {
+            
+                "date": `${year}-${month}-${day}`,
+                "time": `${hours}:${minutes}`,
+                "employeeId": currentUser.id,
+                "delivererId": null,
+                "completed": false
+        }
+        createOrder(order).then((order) => 
+        setOrder(order)
+        )
+
+    }, [currentUser])
+
+    useEffect(() => {
+
+        setOrderNumber(order.id)
+    }, [order])
+
     useEffect(() => {
        
         let pizza = { 
             "sizeId": size,
             "cheeseId": cheese,
             "sauceId": sauce,
-            "toppingsArray": allchecked
+            "orderId": orderNumber
+            
 
         }
         setPizzaObject(pizza)
-    }, [size, cheese, sauce, allchecked])
-
-    useEffect((orderPizzas) => {
-        let orderTotal = 0
-        for (let pizza of orderPizzas) {
-            if (pizza.size === 3) {
-                orderTotal += 15
-            } else if (pizza.size === 2) {
-                orderTotal += 12
-            } else if (pizza.size === 1) {
-                orderTotal += 10
-            }
-        }
-        setTotal(orderTotal)
-
-    }, [orderPizzas])
+    }, [size, cheese, sauce, orderNumber])
 
     useEffect(() => {
         CheeseService().then((cheeses) =>
@@ -137,7 +204,7 @@ export const NewOrder = ({currentUser}) => {
         setAllToppings(toppings))
     }, [])
 
-    return (
+     return (
         <div> 
         <h1>New Order</h1>
           <div>
@@ -205,7 +272,8 @@ export const NewOrder = ({currentUser}) => {
                 {orderPizzas.map(
                     (pizza, i) => {
                         return (
-                            <div>Pizza #{i + 1} <button>Edit</button><button>Delete</button></div>
+                            <div>Pizza #{i + 1} <button>Edit</button>
+                            <button>Delete</button></div>
                     )}                 
                 )}
                 </ul> 
@@ -218,11 +286,14 @@ export const NewOrder = ({currentUser}) => {
                             />Delivery
                     </div>
                     {delivery ? 
-                    
+                            <>
                             <form>
                                 <input type="test" placeholder="Address" 
                                 onChange={(event) => handleAddress(event)} />
                             </form>
+                             <button onClick={() => handleDeliveryOrder(order)}>Submit Order</button>
+                             <p>Total : ${total}</p>
+                             </>
                         : "" }
                      <div>
                     <input
@@ -232,19 +303,26 @@ export const NewOrder = ({currentUser}) => {
                             />Dine In
                     </div>
                     {dineIn ? 
-                    
+                            <>
                             <form>
                                 <input type="number" placeholder="Table" 
                                 onChange={(event) => handleTable(event)} />
                             </form>
+                            <button onClick={() => handleDineInOrder(order)}>Submit Order</button>
+                            <p>Total : ${total}</p>
+                            </>
                         : "" }
                 </div>
                 <div>
-                    <button onClick={() =>submitOrder()}>Submit order</button>
-                    <p>Total : ${total}</p>
-                </div>     
+                    <button className="Home">
+                        <Link to="/" className="nav-link">Home
+                        </Link>
+                    </button>
+                </div>
+                    
            </section>
          </div>
+            
         </div>
     )
 }
