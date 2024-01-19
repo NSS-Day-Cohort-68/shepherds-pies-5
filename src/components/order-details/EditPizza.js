@@ -73,7 +73,7 @@ export const EditPizza = ({
         !updatedToppingSelections.find((newTopping) => newTopping === toppingId)
       ) {
         const pizzaToppingToDelete = inProgressPizza.pizzaToppings.find(
-          (pizzaTopping) => pizzaTopping.pizzaId === toppingId
+          (pizzaTopping) => pizzaTopping.toppingId === toppingId
         );
         console.log("pizza topping to delete", pizzaToppingToDelete);
         if (pizzaToppingToDelete.id) {

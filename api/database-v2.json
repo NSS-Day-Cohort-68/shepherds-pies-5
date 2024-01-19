@@ -247,6 +247,13 @@
       "sauceId": 2,
       "orderId": 9,
       "id": 23
+    },
+    {
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 3,
+      "orderId": 8,
+      "id": 24
     }
   ],
   "pizzaToppings": [
@@ -543,7 +550,7 @@
       "time": "12:30 PM",
       "table": 4,
       "employeeId": 7,
-      "delivererId": 5,
+      "delivererId": 0,
       "address": "",
       "completed": false
     },
@@ -611,7 +618,8 @@
       "date": "2024-1-19",
       "time": "11:49",
       "employeeId": 10,
-      "delivererId": null,
+      "delivererId": 0,
+      "address": "",
       "completed": false,
       "id": 8
     },
